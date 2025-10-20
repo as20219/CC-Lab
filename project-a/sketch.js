@@ -29,7 +29,7 @@ function draw() {
   fill(0);
   rect(0, 450, 800, 50);
   creaturex = lerp(creaturex, mouseX, 0.1);
-  drawCreature(mouseX, 350, color(r, g, b));
+  drawCreature(creaturex, 350, color(r, g, b));
   drawSun(mouseX, 0);
   drawFish(pmouseX + 80, y);
   if (keyIsPressed) {
