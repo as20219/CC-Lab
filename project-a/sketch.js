@@ -8,26 +8,34 @@ CCLaboratories Biodiversity Atlas
 let r;
 let g;
 let b;
-let y = -50
+let y = -50;
 
 function setup() {
-  let canvas = createCanvas(800, 500);
-  canvas.parent("p5-canvas-container")
+  createCanvas(800, 500);
   r = random(0, 200);
   g = random(0, 200);
   b = random(0, 200);
 }
 
 function draw() {
-      background(220);
-
-      drawCreature(mouseX, 350, color(r, g, b));
-      drawSun(mouseX, 0);
-      drawFish(pmouseX + 80, y);
-       if (keyIsPressed) {
-        y = y + 10;
-    }
+  background(40, 100, 250);
+  noStroke();
+  for (let i = 0; i < 30; i++) {
+    fill(250, 20 * i, 10 * i, 10);
+    circle(200, 200, 100 + i * 50);
   }
+  fill(0);
+  rect(0, 450, 800, 50);
+  drawCreature(mouseX, 350, color(r, g, b));
+  drawSun(mouseX, 0);
+  drawFish(pmouseX + 80, y);
+  if (keyIsPressed) {
+    y = y + 10;
+  }
+  if (y > 350) {
+    y = -50;
+  }
+}
 
 function drawCreature(x, y, bodyColor) {
   push();
