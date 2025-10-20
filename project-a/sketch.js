@@ -11,7 +11,8 @@ let b;
 let y = -50;
 
 function setup() {
-  createCanvas(800, 500);
+  canvas = createCanvas(800, 500);
+  canvas.parent("p5-canvas-container");
   r = random(0, 200);
   g = random(0, 200);
   b = random(0, 200);
