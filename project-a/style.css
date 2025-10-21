@@ -6,7 +6,7 @@ CCLaboratories Biodiversity Atlas
 */
 
 body {
-    background-color: white;
+    background-color: #f7afffda; /* replace with any color name or hex, e.g. #000000 or lightblue */
     color: DimGray;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
