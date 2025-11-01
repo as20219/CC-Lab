@@ -75,7 +75,7 @@ class AngelinaDancer {
     // it is using "this" because this function, too, 
     // is a part if your Dancer object.
     // comment it out or delete it eventually.
-    this.drawReferenceShapes()
+    // this.drawReferenceShapes()
 
     pop();
   }
@@ -84,11 +84,11 @@ class AngelinaDancer {
     noStroke()
     fill(255, 192, 203)
     push()
-    rotate(sin(frameCount * 0.05) * 0.5)
+    rotate(sin(frameCount * 0.05) * 0.3)
     ellipse(50, 10, 90, 50)
     pop()
     push()
-    rotate(-sin(frameCount * 0.05) * 0.5)
+    rotate(-sin(frameCount * 0.05) * 0.3)
     ellipse(-50, 10, 90, 50)
     pop()
     pop()
