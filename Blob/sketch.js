@@ -17,7 +17,10 @@ function draw() {
     clouds[i].move();
     clouds[i].display();
   }
+}
 
+function mousePressed() {
+  clouds.push(new Cloud(mouseX, mouseY, random(40, 100)));
 }
 
 class Cloud {
@@ -27,14 +30,20 @@ class Cloud {
     this.s = cloudS
     this.speedX = random(-2, 2)
     this.speedY = random(-3, 3)
+    this.spin = 0
   }
   move() {
     // thi.x += random(-1, 1);
     // this.y += random(-1, 1);
     this.x += this.speedX
     this.y += this.speedY
+    // if (this.y > height || this.y < 0) {
+    //   this.speedX = -this.speedX
+    //   this.spin += 0.1
+    // }
     if (this.y > height || this.y < 0) {
-      this.speedX = -this.speedX
+      this.speedY = -this.speedY
+      this.spin += 0.1
     }
   }
 
