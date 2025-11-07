@@ -40,7 +40,7 @@ class Particle {
     this.x = startX;
     this.y = startY;
     this.hue = random(0, 360);
-    this.wiggle = random(TWO_PI);
+    // this.wiggle = random(TWO_PI);
   }
   // methods (functions): particle's behaviors
   update() {
@@ -48,7 +48,7 @@ class Particle {
     // this.x += this.moveX;
     this.y += this.y * 0.03;
     this.checkBound();
-    this.wiggle = random(PI);
+    this.wiggle = random(TWO_PI);
   }
   display() {
     // particle's appearance
