@@ -81,6 +81,12 @@ class Ball {
       this.col = color(0, 0, 0)
     }
   }
+  checkCollision(other) {
+    let d = dist(this.x, this.y, other.x, other.y);
+    if (d < (this.size + other.size) / 2){
+      this.col = color(0,0,255)
+    } 
+    }
   display() {
     push();
     translate(this.x, this.y);
