@@ -11,7 +11,7 @@ function draw() {
   spoon.display();
 }
 
-class projectbprotype {
+class projectbprotoype {
   constructor(startX, startY) {
     this.x = startX;
     this.y = startY;
