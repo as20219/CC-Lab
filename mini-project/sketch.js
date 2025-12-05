@@ -1,11 +1,15 @@
 let spoon;
+let img;
 function setup() {
   let canvas = createCanvas(800, 500);
   canvas.parent("p5-canvas-container");
   spoon = new projectbprotype(300, 300);
 }
+function prelaod() {
+  img = loadImage("assets/background.jpg");
+}
 function draw() {
-  background(220);
+  background(img);
   spoon.update();
   spoon.display();
 }
