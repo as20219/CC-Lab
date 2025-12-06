@@ -149,7 +149,6 @@ class spaceplanent {
     push();
     imageMode(CENTER);
     noStroke();
-    // image(this.planetImg, 0, by);
     if (this.property2 === "mars") {
       this.drawMars(by);
     } else if (this.property2 === "jupiter") {
