@@ -3,17 +3,38 @@ let img;
 let mars;
 let jupiter;
 let mercury;
+let venus;
+let saturn;
+let uranus;
+let neptune;
 let ding;
+let marsmusic;
+let jupitermusic;
+let mercurymusic;
+let venusmusic;
+let saturnmusic;
+let uranusmusic;
+let neptunemusic;
 let ball;
+let cymbalSound;
 function preload() {
   img = loadImage("assets/background.jpg");
   mars = loadImage("assets/mars.png");
   jupiter = loadImage("assets/jupiter.png");
   mercury = loadImage("assets/mercury.png");
+  venus = loadImage("assets/venus.png");
+  saturn = loadImage("assets/saturn.png");
+  uranus = loadImage("assets/uranus.png");
+  neptune = loadImage("assets/neptune.png");
   ding = loadSound("assets/ding.mp3");
+  cymbalSound = loadSound("assets/cymbals.mp3");
   marsmusic = loadSound("assets/marsmusic.mp3");
   jupitermusic = loadSound("assets/jupitermusic.mp3");
   mercurymusic = loadSound("assets/mercurymusic.mp3");
+  venusmusic = loadSound("assets/venusmusic.mp3");
+  saturnmusic = loadSound("assets/saturnmusic.mp3");
+  uranusmusic = loadSound("assets/uranusmusic.mp3");
+  neptunemusic = loadSound("assets/neptunemusic.mp3");
 }
 function setup() {
   let canvas = createCanvas(800, 500);
@@ -64,7 +85,7 @@ class projectbprotype {
         if (this.by > this.position) {
           this.by = 0;
           this.spoonStart = true;
-          // ding.play();
+          cymbalSound.play();
         }
       }
 
@@ -130,12 +151,40 @@ class spaceplanent {
         this.stopMusic();
         jupitermusic.loop();
       }
-      if (key === "n") {
+      if (key === "a") {
         this.property1 = true;
         this.property2 = "mercury";
         this.planetImg = mercury;
         this.stopMusic();
         mercurymusic.loop();
+      }
+      if (key === "s") {
+        this.property1 = true;
+        this.property2 = "saturn";
+        this.planetImg = saturn;
+        this.stopMusic();
+        saturnmusic.loop();
+      }
+      if (key === "v") {
+        this.property1 = true;
+        this.property2 = "venus";
+        this.planetImg = venus;
+        this.stopMusic();
+        venusmusic.loop();
+      }
+      if (key === "u") {
+        this.property1 = true;
+        this.property2 = "uranus";
+        this.planetImg = uranus;
+        this.stopMusic();
+        uranusmusic.loop();
+      }
+      if (key === "n") {
+        this.property1 = true;
+        this.property2 = "neptune";
+        this.planetImg = neptune;
+        this.stopMusic();
+        neptunemusic.loop();
       }
     }
   }
@@ -143,6 +192,10 @@ class spaceplanent {
     marsmusic.stop();
     jupitermusic.stop();
     mercurymusic.stop();
+    saturnmusic.stop();
+    venusmusic.stop();
+    uranusmusic.stop();
+    neptunemusic.stop();
   }
 
   drawBall(by) {
@@ -156,18 +209,40 @@ class spaceplanent {
     } else if (this.property2 === "mercury") {
       this.drawMercury(by);
     }
+    else if (this.property2 === "saturn") {
+      this.drawSaturn(by);
+    }
+    else if (this.property2 === "venus") {
+      this.drawVenus(by);
+    }
+    else if (this.property2 === "neptune") {
+      this.drawNeptune(by);
+    }
+    else if (this.property2 === "uranus") {
+      this.drawUranus(by);
+    }
     pop();
   }
   drawMars(by) {
-    image(mars, 0, by, 100, 100);
+    image(mars, 0, by - 20, 100, 100);
   }
-
   drawJupiter(by) {
-    image(jupiter, 0, by - 30, 150, 150);
+    image(jupiter, 0, by - 50, 200, 200);
   }
-
   drawMercury(by) {
-    image(mercury, 0, by, 50, 50);
+    image(mercury, 0, by - 10, 50, 50);
+  }
+  drawSaturn(by) {
+    image(saturn, 0, by - 30, 210, 210);
+  }
+  drawVenus(by) {
+    image(venus, 0, by - 20, 150, 150);
+  }
+  drawUranus(by) {
+    image(uranus, 0, by - 30, 200, 200);
+  }
+  drawNeptune(by) {
+    image(neptune, 0, by - 20, 200, 200);
   }
 }
 
